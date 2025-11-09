@@ -1,0 +1,50 @@
+.header {
+  background-color: #004ce4;
+  color: black;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Contenedor principal: usa flex para dejar todo en una fila */
+.menu-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* marca a la izquierda, menú a la derecha */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Asegurar que el título no tenga margen por defecto */
+.menu-home > li:first-child h3 {
+  margin: 0;
+}
+
+/* Menú derecho: también un flex row con separación */
+.menu-home-ul {
+  display: flex;
+  gap: 15px; /* espacio entre opciones */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-home-ul li {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pequeño ajuste responsivo: en pantallas muy pequeñas el menú puede comprimirse */
+@media (max-width: 480px) {
+  .menu-home {
+    gap: 8px;
+  }
+  .menu-home-ul {
+    gap: 8px;
+    font-size: 13px;
+  }
+}
