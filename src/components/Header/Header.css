@@ -4,12 +4,13 @@
   padding: 15px 30px;
   font-size: 14px;
   font-weight: bold;
-  width: 100%;
-  position: fixed;
+  width: 80%;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-left: 20%;
 }
 
 /* Contenedor principal: usa flex para dejar todo en una fila */

@@ -1,5 +1,10 @@
-.contenedor-tarjetas {
+.seccion-carrusel {
     margin-top: 5%;
+    
+}
+
+.contenedor-tarjetas {
+    padding-left: 5%;
     /* 1. Muestra las tarjetas en fila */
     display: flex;
     gap: 20px; /* Espacio entre las tarjetas */
@@ -24,6 +29,7 @@
 
 /* Estilo para las tarjetas individuales */
 .tarjeta-libro {
+    margin-top: 3%;
     /* Esencial: evita que las tarjetas se redimensionen */
     flex-shrink: 0; 
     
@@ -38,4 +44,17 @@
     border-radius: 15px;
     height: 120px;
     /* ... otros estilos visuales ... */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta-libro:hover {
+  /* Levanta la tarjeta hacia arriba */
+  transform: translateY(-10px);
+  
+  /* Agrega sombra para el efecto de "levantamiento" */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Opcional: aumenta ligeramente el tamaño */
+  transform: translateY(-10px) scale(1.05);
 }
