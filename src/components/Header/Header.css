@@ -65,3 +65,32 @@
     font-size: 18px;
   }
 }
+
+
+.barra-busqueda-sencilla {
+    /* Alinea el campo de texto y el botón en una fila */
+    display: flex; 
+    
+    /* Le da un ancho máximo al formulario */
+    max-width: 5%;
+    margin-left: 90%; /* Centra el formulario y da margen */
+}
+
+.barra-busqueda-sencilla input[type="text"] {
+    /* Hace que el campo de texto ocupe todo el espacio disponible */
+    flex-grow: 1; 
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-right: none; /* Quita el borde derecho para que se "una" al botón */
+    border-radius: 5px 0 0 5px; /* Bordes redondeados solo a la izquierda */
+    font-size: 10px;
+}
+
+.barra-busqueda-sencilla button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Color del botón (azul) */
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 0 5px 5px 0; /* Bordes redondeados solo a la derecha */
+    cursor: pointer;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import './Naw.css';
+import '../config.css';
+import { foto_perfil, user_name } from '../config';
 
 function Naw () {
     return (
@@ -9,16 +11,16 @@ function Naw () {
                     {/* Imagen directa del contenido de Pinterest */}
                     <h5>Welcome Back</h5>
                     <img
-                        src="https://i.pinimg.com/736x/1f/df/9d/1fdf9d1bbd4a0682f5c8ac8c96628286.jpg"
+                        src={foto_perfil}
                         alt="Logo Gamebly"
                         className="Naw-image"
                     />
-                    <h4>Okar Rojas</h4>
+                    <h4>{user_name}</h4>
                 </div>
                 <ul>
                     <li>your library</li>
                     <li>New Games</li>
-                    <li>Home</li>
+                    <li>Recomendaciones</li>
                     <li>etc...</li>
                 </ul>
             </nav>

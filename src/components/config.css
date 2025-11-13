@@ -1,0 +1,16 @@
+:root {
+    --foto-perfil: "https://i.pinimg.com/736x/1f/df/9d/1fdf9d1bbd4a0682f5c8ac8c96628286.jpg";
+    --user-name: "Okar Rojas";
+    --color-nav: 168, 168, 255; /* use con rgb(var(--color-nav)) */
+    --color-tarjetas: #282828;
+    --color-biblioteca: #121212;
+    --see-more-color: #ffffff;
+}
+
+/* Ejemplos de uso:
+.header { background-color: rgb(var(--color-nav)); }
+.avatar { background-image: var(--foto-perfil); }
+.username::after { content: var(--user-name); color: var(--see-more-color); }
+.card { background-color: var(--color-tarjetas); }
+.library { background-color: var(--color-biblioteca); }
+*/
