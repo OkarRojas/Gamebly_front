@@ -1,57 +1,21 @@
-import React, { useRef, useEffect } from 'react';
-import './recently_played.css'; // Tu CSS aquí
+import React from "react";
+import './recently_played.css';
 
-export default function CarruselLibros() {
-  const carruselRef = useRef(null);
-
-  useEffect(() => {
-    const carrusel = carruselRef.current;
-    const ruedaHandler = (evento) => {
-      evento.preventDefault();
-      carrusel.scrollLeft += evento.deltaY;
-    };
-    if (carrusel) {
-      carrusel.addEventListener('wheel', ruedaHandler);
-    }
-    return () => {
-      if (carrusel) {
-        carrusel.removeEventListener('wheel', ruedaHandler);
-      }
-    };
-  }, []);
-
+export default function RecentlyPlayed() {
   return (
-    <section className="seccion-carrusel">
-      <h3>Books you read last</h3>
-      <div className="contenedor-tarjetas" ref={carruselRef}>
-        {/* Más tarjetas */}
-        <div className="tarjeta-libro">
-          <img src="libro1.jpg" alt="Libro 1"/>
-          <h4>Harry Potter</h4>
-          <p>189 Pages • Chapter 13</p>
+    <div className="recently-played">
+      <section class="seccion-carrusel">
+    <h3>Books you read last</h3>
+    <div class="contenedor-tarjetas">
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
+        <div class="tarjeta-libro">... Contenido del libro ...</div>
         </div>
-         <div className="tarjeta-libro">
-          <img src="libro1.jpg" alt="Libro 1"/>
-          <h4>Harry Potter</h4>
-          <p>189 Pages • Chapter 13</p>
-        </div>
-         <div className="tarjeta-libro">
-          <img src="libro1.jpg" alt="Libro 1"/>
-          <h4>Harry Potter</h4>
-          <p>189 Pages • Chapter 13</p>
-        </div>
-         <div className="tarjeta-libro">
-          <img src="libro1.jpg" alt="Libro 1"/>
-          <h4>Harry Potter</h4>
-          <p>189 Pages • Chapter 13</p>
-        </div>
-         <div className="tarjeta-libro">
-          <img src="libro1.jpg" alt="Libro 1"/>
-          <h4>Harry Potter</h4>
-          <p>189 Pages • Chapter 13</p>
-        </div>
-        {/* ... etc ... */}
-      </div>
-    </section>
+</section>
+    </div>
   );
 }

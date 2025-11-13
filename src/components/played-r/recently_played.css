@@ -1,106 +1,41 @@
-.recently-played {
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.recently-played-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.recently-played h3 {
-    margin: 0;
-    text-align: left;
-    color: rgb(61, 66, 65);
-    font-size: 24px;
-}
-
-.recently-played ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-.seccion-carrusel {
-  padding: 20px;
-  margin-top: 5%;
-}
-
-.seccion-carrusel h3 {
-  margin: 0 0 20px 0;
-  font-size: 18px;
-}
-
 .contenedor-tarjetas {
-  /* Mostrar en fila */
-  padding-top: 5%;
-  padding-left: 1%;
-  display: flex;
-  gap: 20px;
-  
-  /* Scroll horizontal */
-  overflow-x: auto;
-  overflow-y: hidden;
-  
-  /* Scroll snap */
-  scroll-snap-type: x mandatory;
-  
-  /* Ocultar scrollbar */
-  scrollbar-width: none;
-  
-  /* Para que sea suave el scroll */
-  scroll-behavior: smooth;
+    margin-top: 5%;
+    /* 1. Muestra las tarjetas en fila */
+    display: flex;
+    gap: 20px; /* Espacio entre las tarjetas */
+    
+    /* 2. Habilita el desplazamiento horizontal */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+    /* Opcional: Para ocultar la barra de desplazamiento en algunos navegadores */
+    /* Para navegadores basados en Webkit (Chrome, Safari): */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer y Edge */
+    
+    /* 3. Asegura el 'snap' a cada tarjeta */
+    scroll-snap-type: x mandatory; 
 }
 
-/* Ocultar scrollbar en Chrome */
+/* Opcional: Ocultar la barra de desplazamiento en Webkit */
 .contenedor-tarjetas::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-/* Cada tarjeta */
+/* Estilo para las tarjetas individuales */
 .tarjeta-libro {
-  /* Tamaño fijo */
-  flex-shrink: 0;
-  width: 300px;
-  
-  /* Scroll snap */
-  scroll-snap-align: start;
-  
-  /* Estilos */
-  background: #4A4A4A;
-  border-radius: 15px;
-  padding: 15px;
-  cursor: pointer;
-  
-  /* Para el efecto de sobresalto */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tarjeta-libro:hover {
-  /* Efecto de sobresalto (levanta la tarjeta) */
-  transform: translateY(-8px) scale(1.02);
-  
-  /* Sombra para profundidad */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.tarjeta-libro img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.tarjeta-libro h4 {
-  margin: 0 0 5px 0;
-  font-size: 14px;
-  color: white;
-}
-
-.tarjeta-libro p {
-  margin: 0;
-  font-size: 12px;
-  color: #aaa;
+    /* Esencial: evita que las tarjetas se redimensionen */
+    flex-shrink: 0; 
+    
+    /* Define el ancho de la tarjeta para que solo se vea un pedazo de la siguiente */
+    width: 300px; /* Ajusta este valor según el ancho de tu contenedor */
+    
+    /* Hace que la tarjeta se alinee perfectamente al borde al hacer scroll-snap */
+    scroll-snap-align: start;
+    
+    /* Otros estilos (fondo, bordes, etc.) */
+    background: #4A4A4A;
+    border-radius: 15px;
+    height: 120px;
+    /* ... otros estilos visuales ... */
 }
