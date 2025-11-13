@@ -1,0 +1,63 @@
+.library-section {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.library-section h3 {
+    margin: 0;
+    text-align: left;
+    color: rgb(61, 66, 65);
+    font-size: 24px;
+}
+
+.biblioteca-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.tarjeta-juego {
+    background-color: #991b1b;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-juego:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.tarjeta-juego h4 {
+    margin-top: 10px;
+    color: white;
+}
+
+.library-section a {
+    text-decoration: none;
+    color: rgb(61, 66, 65);
+    font-size: 16px;
+    background-color: rgb(131, 255, 243);
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.library-section a:hover {
+    background-color: rgb(100, 220, 210);
+}

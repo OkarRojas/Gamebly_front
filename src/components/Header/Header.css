@@ -1,16 +1,22 @@
 .header {
-  background-color: #004ce4;
+  background-color: hsl(246, 79%, 87%);
   color: black;
-  padding: 20px;
+  padding: 15px 30px;
   font-size: 14px;
   font-weight: bold;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Contenedor principal: usa flex para dejar todo en una fila */
 .menu-home {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* marca a la izquierda, menú a la derecha */
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -21,12 +27,13 @@
 /* Asegurar que el título no tenga margen por defecto */
 .menu-home > li:first-child h3 {
   margin: 0;
+  font-size: 22px;
 }
 
 /* Menú derecho: también un flex row con separación */
 .menu-home-ul {
   display: flex;
-  gap: 15px; /* espacio entre opciones */
+  gap: 25px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -35,7 +42,13 @@
 .menu-home-ul li {
   cursor: pointer;
   margin: 0;
-  padding: 0;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.menu-home-ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Pequeño ajuste responsivo: en pantallas muy pequeñas el menú puede comprimirse */
@@ -44,7 +57,10 @@
     gap: 8px;
   }
   .menu-home-ul {
-    gap: 8px;
-    font-size: 13px;
+    gap: 10px;
+    font-size: 12px;
+  }
+  .menu-home > li:first-child h3 {
+    font-size: 18px;
   }
 }
