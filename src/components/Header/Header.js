@@ -10,6 +10,11 @@ function Header() {
         </li>
         <li>
           <ul className='menu-home-ul'>
+            <li>
+
+              Home
+
+            </li>
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>

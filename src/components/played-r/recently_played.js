@@ -48,8 +48,12 @@ export default function RecentlyPlayed() {
   return (
     <div className="recently-played">
       <section className="seccion-carrusel">
-        <h3>Games you played last</h3>
+        <div className="header-r">
+            <h3>Games you played last</h3>
+            <a href="URL_a_donde_quieres_redireccionar">see more</a>
+        </div>
         <div ref={contenedorRef} className="contenedor-tarjetas">
+
           <div className="tarjeta-libro">Libro 1</div>
           <div className="tarjeta-libro">Libro 2</div>
           <div className="tarjeta-libro">Libro 3</div>

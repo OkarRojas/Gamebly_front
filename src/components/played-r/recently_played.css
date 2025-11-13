@@ -1,9 +1,23 @@
 .seccion-carrusel {
     margin-top: 5%;
-    
+}
+
+.header-r h3{
+    text-align: left;
+    color: rgb(61, 66, 65);
+    font-size: 24px;
+    position: absolute;
+}
+
+.header-r {
+    margin-top: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contenedor-tarjetas {
+    margin-top: 2%;
     padding-left: 5%;
     /* 1. Muestra las tarjetas en fila */
     display: flex;
@@ -57,4 +71,21 @@
   
   /* Opcional: aumenta ligeramente el tamaño */
   transform: translateY(-10px) scale(1.05);
+}
+
+.seccion-carrusel a {
+    text-decoration: none;
+    color: rgb(61, 66, 65);
+    font-size: 16px;
+    background-color: rgb(131, 255, 243);
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    position: absolute;
+    margin-left: 70%;
+}
+
+.seccion-carrusel a:hover {
+    background-color: rgb(100, 220, 210);
 }
