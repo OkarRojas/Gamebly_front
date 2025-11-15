@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gameblyfr/static/css/main.c60ed3ea.css",
+    "main.js": "/gameblyfr/static/js/main.12717968.js",
+    "static/js/453.458eacd7.chunk.js": "/gameblyfr/static/js/453.458eacd7.chunk.js",
+    "index.html": "/gameblyfr/index.html",
+    "main.c60ed3ea.css.map": "/gameblyfr/static/css/main.c60ed3ea.css.map",
+    "main.12717968.js.map": "/gameblyfr/static/js/main.12717968.js.map",
+    "453.458eacd7.chunk.js.map": "/gameblyfr/static/js/453.458eacd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c60ed3ea.css",
+    "static/js/main.12717968.js"
+  ]
+}
