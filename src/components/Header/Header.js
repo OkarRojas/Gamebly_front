@@ -1,5 +1,19 @@
 import React from 'react';
 import './Header.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function Home() {
+  return <h2>Inicio</h2>;
+}
+function About() {
+  return <a href="src\components\about_us\about.js" target="_blank" rel="noopener noreferrer">
+  Abrir en nueva pestaña
+</a>
+}
+
+function Contact() {
+  return <h2>Contacto</h2>;
+}
 
 function Header() {
   return (
@@ -18,11 +32,19 @@ function Header() {
         </form>
         </li>
         <li>
-          <ul className='menu-home-ul'>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
+          <BrowserRouter>
+            <nav>
+              <Link to="/">Inicio</Link> |{" "}
+              <Link to="/about">Acerca de</Link> |{" "}
+              <Link to="/contact">Contacto</Link>
+            </nav>
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </BrowserRouter>
         </li>
       </ul>
     </header>
