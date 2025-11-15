@@ -1,5 +1,5 @@
 .header {
-  background-color: hsl(246, 79%, 87%);
+  background-color: rgb(168, 168, 255);
   color: black;
   padding: 15px 30px;
   font-size: 14px;
@@ -88,9 +88,8 @@
 
 .barra-busqueda-sencilla button {
     padding: 5px 10px;
-    background-color: #007bff; /* Color del botón (azul) */
     color: white;
-    border: 1px solid #007bff;
-    border-radius: 0 5px 5px 0; /* Bordes redondeados solo a la derecha */
+    border-color: rgb(44, 44, 44);    
+    border-radius: 5px 5px 5px 5px; /* Bordes redondeados solo a la derecha */
     cursor: pointer;
 }

@@ -14,7 +14,7 @@ function Header() {
                   name="q" 
                   placeholder="Buscar..." 
                   aria-label="Campo de búsqueda" />
-            <button type="submit">Buscar</button>
+            <button type="submit">🔍</button>
         </form>
         </li>
         <li>

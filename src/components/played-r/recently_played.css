@@ -75,9 +75,9 @@
 
 .seccion-carrusel a {
     text-decoration: none;
-    color: rgb(61, 66, 65);
+    color: rgb(246, 255, 253);
     font-size: 16px;
-    background-color: rgb(131, 255, 243);
+    background-color: rgb(37, 68, 65);
     padding: 8px 20px;
     border-radius: 10px;
     transition: background-color 0.3s;
@@ -87,5 +87,5 @@
 }
 
 .seccion-carrusel a:hover {
-    background-color: rgb(100, 220, 210);
+    background-color: rgb(21, 109, 100);
 }
