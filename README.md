@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Despliegue en GitHub Pages
+
+- URL del sitio: https://okarrojas.github.io/Gamebly_front
+- La configuración `homepage` en `package.json` ya apunta a esa URL.
+- Para publicar cambios sin reconstruir, usa:
+
+```bash
+npx gh-pages -d build
+```
+
+- Si quieres reconstruir antes de publicar, primero habría que reparar `react-scripts` (CRA) ya que actualmente `npm run build` falla. Te dejo esto como siguiente mejora recomendada.
+
 ## Available Scripts
 
 In the project directory, you can run:
