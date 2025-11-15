@@ -1,22 +1,26 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Naw from './components/Naw/Naw';
-import RecentlyPlayed from './components/played-r/recently_played';
-import LibraryGrid from './components/library-grid/library-grid';
-
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="App-container">
-        <Naw />
-        <main className="App-main-content">
-          <RecentlyPlayed />      
-          <LibraryGrid />
-        </main>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <div className="App-container">
+          <Naw />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
