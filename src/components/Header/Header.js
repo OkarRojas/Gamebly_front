@@ -20,7 +20,7 @@ function Header() {
         </li>
         <li>
           <nav>
-            <Link to="/">Inicio</Link> |{" "}
+            <Link to="/Gamebly_front">Inicio</Link> |{" "}
             <Link to="/about">Acerca de</Link> |{" "}
             <Link to="/contact">Contacto</Link>
           </nav>

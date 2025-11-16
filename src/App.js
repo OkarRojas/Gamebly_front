@@ -8,18 +8,23 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
+
+    
     <BrowserRouter>
       <div className="App">
         <Header />
         <div className="App-container">
           <Naw />
-          <Routes>
+          <Routes>     
+            <Route path="/Gamebly_front" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
+         
       </div>
+      
     </BrowserRouter>
   );
 }
