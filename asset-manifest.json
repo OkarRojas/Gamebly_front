@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Gamebly_front/static/css/main.c60ed3ea.css",
-    "main.js": "/Gamebly_front/static/js/main.dba27ea9.js",
+    "main.css": "/Gamebly_front/static/css/main.0789d1bf.css",
+    "main.js": "/Gamebly_front/static/js/main.d7f2344f.js",
     "static/js/453.458eacd7.chunk.js": "/Gamebly_front/static/js/453.458eacd7.chunk.js",
     "index.html": "/Gamebly_front/index.html",
-    "main.c60ed3ea.css.map": "/Gamebly_front/static/css/main.c60ed3ea.css.map",
-    "main.dba27ea9.js.map": "/Gamebly_front/static/js/main.dba27ea9.js.map",
+    "main.0789d1bf.css.map": "/Gamebly_front/static/css/main.0789d1bf.css.map",
+    "main.d7f2344f.js.map": "/Gamebly_front/static/js/main.d7f2344f.js.map",
     "453.458eacd7.chunk.js.map": "/Gamebly_front/static/js/453.458eacd7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c60ed3ea.css",
-    "static/js/main.dba27ea9.js"
+    "static/css/main.0789d1bf.css",
+    "static/js/main.d7f2344f.js"
   ]
 }
