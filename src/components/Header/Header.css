@@ -1,16 +1,16 @@
 .header {
   background-color: rgb(168, 168, 255);
   color: black;
-  padding: 15px 30px;
   font-size: 14px;
   font-weight: bold;
   width: 80%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-left: 20%;
+  height: 60px;
 }
 
 /* Contenedor principal: usa flex para dejar todo en una fila */
@@ -18,11 +18,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin-left: 0%;
   list-style: none;
   width: 100%;
   box-sizing: border-box;
+  height: 40px;
+  margin-top: 1%;
 }
 
 /* Asegurar que el título no tenga margen por defecto */
@@ -92,4 +93,170 @@
     border-color: rgb(44, 44, 44);    
     border-radius: 5px 5px 5px 5px; /* Bordes redondeados solo a la derecha */
     cursor: pointer;
+}
+
+
+
+/* ✅ CONTENEDOR DE BÚSQUEDA - CLAVE */
+.header-search-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+  /* NO tiene altura fija */
+}
+
+.header-search {
+  width: 100%;
+}
+
+/* ✅ DROPDOWN FLOTANTE - POSICIÓN ABSOLUTA */
+.search-resultados {
+  position: absolute;
+  top: calc(100% + 8px); /* ← Aparece FUERA del header */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 10000; /* ← Muy alto para que esté encima de todo */
+}
+
+.search-loading {
+  text-align: center;
+  padding: 12px;
+  color: #666;
+  font-size: 14px;
+}
+
+.search-empty {
+  text-align: center;
+  padding: 12px;
+  color: #999;
+  font-size: 14px;
+}
+
+.search-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-item:hover {
+  background-color: #f5f5f5;
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item__imagen {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+
+.search-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-item__nombre {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-item__genero {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #999;
+}
+
+/* ✅ SCROLL BONITO */
+.search-resultados::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-resultados::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.search-resultados::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.search-resultados::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .menu-home {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header-search-container {
+    flex: 1 0 100%;
+    order: 3;
+    max-width: 100%;
+  }
+
+  .menu-home li:last-child {
+    flex: 1 0 100%;
+    order: 4;
+  }
+
+  .search-resultados {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .menu-home {
+    gap: 8px;
+  }
+
+  .search-item {
+    padding: 8px;
+  }
+
+  .search-item__nombre {
+    font-size: 13px;
+  }
+
+  .search-resultados {
+    max-height: 250px;
+  }
+}
+
+nav {
+    font-size: 14px;
+    text-decoration: none;
 }

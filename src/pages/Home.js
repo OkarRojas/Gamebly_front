@@ -6,7 +6,7 @@ function Home() {
   return (
     <main className="App-main-content">
       <RecentlyPlayed />      
-      <LibraryGrid />
+      <LibraryGrid limit={4} /> {/* 4 juegos en grid */}
     </main>
   );
 }

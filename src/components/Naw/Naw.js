@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // ← AGREGA ESTO
 import './Naw.css';
 import '../config.css';
 import { foto_perfil, user_name } from '../config';
@@ -7,8 +8,8 @@ function Naw () {
     return (
         <div>
             <nav className='Naw'>
+                <h1><Link to="/Gamebly_front">Gamebly</Link></h1>
                 <div className="cuadrado">
-                    {/* Imagen directa del contenido de Pinterest */}
                     <h5>Welcome Back</h5>
                     <img
                         src={foto_perfil}
@@ -18,10 +19,11 @@ function Naw () {
                     <h4>{user_name}</h4>
                 </div>
                 <ul>
-                    <li>your library</li>
-                    <li>New Games</li>
-                    <li>Recomendaciones</li>
-                    <li>etc...</li>
+                    <li><Link to="/Gamebly_front">Home</Link></li>
+                    <li><Link to="/about">your library</Link></li>
+                    <li><Link to="/new-games">New Games</Link></li> {/* ← CAMBIO */}
+                    <li><Link to="/recommendations">Recomendaciones</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </nav>
         </div>
