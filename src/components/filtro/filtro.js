@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './filtro.css';
 
-export default function filtro() {
+export default function filtroo() {
   const [games, setGames] = useState([]);
   const [genres, setGenres] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +68,7 @@ export default function filtro() {
         className="search-bar-btn"
         onClick={() => setIsOpen(!isOpen)}
       >
-        🔍 Buscar por Género
+        
         <span className={`dropdown-arrow ${isOpen ? 'open' : ''}`}>▼</span>
       </button>
 

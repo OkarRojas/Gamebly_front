@@ -3,7 +3,7 @@ import './Header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import { buscarJuegos } from '../../services/apiClient';
-import filtroo from '../filtro/filtro';
+import filtroo from '../filtro/filtro.js';
 
 function Header() {
   const [busqueda, setBusqueda] = useState('');
@@ -52,8 +52,8 @@ function Header() {
   return (
     <header className="header">
       <ul className='menu-home'>
-        <li>
-          <filtroo />
+        <li className="header-filter-container">
+          {filtroo && React.createElement(filtroo)}
         </li>
         <li className="header-search-container">
           <SearchBar 

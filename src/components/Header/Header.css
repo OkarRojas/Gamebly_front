@@ -74,7 +74,7 @@
     
     /* Le da un ancho máximo al formulario */
     max-width: 5%;
-    margin-left: 90%; /* Centra el formulario y da margen */
+    margin-left: 80%; /* Centra el formulario y da margen */
 }
 
 .barra-busqueda-sencilla input[type="text"] {
@@ -102,6 +102,7 @@
   position: relative;
   flex: 1;
   max-width: 400px;
+  margin-right: 10%;
   /* NO tiene altura fija */
 }
 
@@ -259,4 +260,8 @@
 nav {
     font-size: 14px;
     text-decoration: none;
+}
+
+.header-filter-container {
+    margin-left: 49%;
 }
