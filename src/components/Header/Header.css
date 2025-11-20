@@ -1,38 +1,49 @@
+/* ============================================
+   HEADER PRINCIPAL
+   ============================================ */
 .header {
   background-color: rgb(168, 168, 255);
   color: black;
   font-size: 14px;
   font-weight: bold;
   width: 80%;
+  height: 60px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-left: 20%;
-  height: 60px;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor principal: usa flex para dejar todo en una fila */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 100%;
+}
+
+/* ============================================
+   MENÚ Y NAVEGACIÓN
+   ============================================ */
 .menu-home {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 0%;
+  margin-left: 0;
+  margin-top: 1%;
   list-style: none;
   width: 100%;
-  box-sizing: border-box;
   height: 40px;
-  margin-top: 1%;
+  box-sizing: border-box;
 }
 
-/* Asegurar que el título no tenga margen por defecto */
 .menu-home > li:first-child h3 {
   margin: 0;
   font-size: 22px;
 }
 
-/* Menú derecho: también un flex row con separación */
 .menu-home-ul {
   display: flex;
   gap: 25px;
@@ -53,67 +64,58 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Pequeño ajuste responsivo: en pantallas muy pequeñas el menú puede comprimirse */
-@media (max-width: 480px) {
-  .menu-home {
-    gap: 8px;
-  }
-  .menu-home-ul {
-    gap: 10px;
-    font-size: 12px;
-  }
-  .menu-home > li:first-child h3 {
-    font-size: 18px;
-  }
+nav {
+  font-size: 14px;
+  text-decoration: none;
 }
 
-
+/* ============================================
+   BARRA DE BÚSQUEDA
+   ============================================ */
 .barra-busqueda-sencilla {
-    /* Alinea el campo de texto y el botón en una fila */
-    display: flex; 
-    
-    /* Le da un ancho máximo al formulario */
-    max-width: 5%;
-    margin-left: 80%; /* Centra el formulario y da margen */
+  display: flex;
+  max-width: 5%;
+  margin-left: 80%;
 }
 
 .barra-busqueda-sencilla input[type="text"] {
-    /* Hace que el campo de texto ocupe todo el espacio disponible */
-    flex-grow: 1; 
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-right: none; /* Quita el borde derecho para que se "una" al botón */
-    border-radius: 5px 0 0 5px; /* Bordes redondeados solo a la izquierda */
-    font-size: 10px;
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 10px;
 }
 
 .barra-busqueda-sencilla button {
-    padding: 5px 10px;
-    color: white;
-    border-color: rgb(44, 44, 44);    
-    border-radius: 5px 5px 5px 5px; /* Bordes redondeados solo a la derecha */
-    cursor: pointer;
+  padding: 5px 10px;
+  color: white;
+  border-color: rgb(44, 44, 44);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-
-/* ✅ CONTENEDOR DE BÚSQUEDA - CLAVE */
 .header-search-container {
   position: relative;
   flex: 1;
   max-width: 400px;
   margin-right: 10%;
-  /* NO tiene altura fija */
 }
 
 .header-search {
   width: 100%;
 }
 
-/* ✅ DROPDOWN FLOTANTE - POSICIÓN ABSOLUTA */
+.header-filter-container {
+  margin-left: 49%;
+}
+
+/* ============================================
+   RESULTADOS DE BÚSQUEDA - DROPDOWN
+   ============================================ */
 .search-resultados {
   position: absolute;
-  top: calc(100% + 8px); /* ← Aparece FUERA del header */
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
   background: white;
@@ -122,7 +124,8 @@
   max-height: 400px;
   overflow-y: auto;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  z-index: 10000; /* ← Muy alto para que esté encima de todo */
+  z-index: 10000;
+  width: 260px;
 }
 
 .search-loading {
@@ -175,6 +178,7 @@
 .search-item__info {
   flex: 1;
   min-width: 0;
+  display: flex;
 }
 
 .search-item__nombre {
@@ -193,7 +197,7 @@
   color: #999;
 }
 
-/* ✅ SCROLL BONITO */
+/* Scrollbar personalizado */
 .search-resultados::-webkit-scrollbar {
   width: 6px;
 }
@@ -212,7 +216,9 @@
   background: #999;
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE - MEDIA QUERIES
+   ============================================ */
 @media (max-width: 900px) {
   .menu-home {
     flex-wrap: wrap;
@@ -257,13 +263,84 @@
   }
 }
 
-nav {
-    font-size: 14px;
-    text-decoration: none;
+@media (max-width: 480px) {
+  .menu-home {
+    gap: 8px;
+  }
+
+  .menu-home-ul {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .menu-home > li:first-child h3 {
+    font-size: 18px;
+  }
 }
 
-.header-filter-container {
-    margin-left: 49%;
+
+
+
+
+
+/* ✅ Más pequeño */
+.search-result-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-/* hola prueba*/
+/* O si prefieres aún más pequeño */
+.search-result-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: absolute;  /* ← AGREGA ESTO */
+  margin-left: 70%;
+  
+}
+
+.search-results-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #d8bfd8;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  width: 220px;        /* ← ANCHO FIJO */
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.letters-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.search-bar-btn{
+  margin-left: 100%;
+}
+
+.filtro{
+  margin-left: 60%;
+  position: absolute;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+}

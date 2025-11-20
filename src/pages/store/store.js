@@ -63,30 +63,33 @@ export default function Store() {
   if (games.length === 0) return <div className="store-empty">No hay juegos disponibles</div>;
 
   return (
-    <div className="store-container">
-      <h2 className="store-title">🎮 Store - Todos los Juegos</h2>
+    <>
 
-      <div className="store-grid">
-        {currentGames.map((game) => (
-          <div 
-            className="store-card" 
-            key={game._id}
-            onClick={() => navigate(`/juego/${game._id}`)}
-            style={{ cursor: 'pointer' }}
-          >
-            <img 
-              src={game.imagen || 'https://via.placeholder.com/240x140?text=Game'} 
-              alt={game.nombre} 
-              className="store-card-image"
-            />
-            <h3>{game.nombre}</h3>
-            <p>{game.genero} - {game.plataforma}</p>
-            <span className="store-card-rating">⭐ {game.rating}/10</span>
-          </div>
-        ))}
+      <div className='nose'>
+      <div className="store-container">
+        <div className="store-grid">
+          {currentGames.map((game) => (
+            <div 
+              className="store-card" 
+              key={game._id}
+              onClick={() => navigate(`/juego/${game._id}`)}
+              style={{ cursor: 'pointer' }}
+            >
+              <img 
+                src={game.imagen || 'https://via.placeholder.com/240x140?text=Game'} 
+                alt={game.nombre} 
+                className="store-card-image"
+              />
+              <h3>{game.nombre}</h3>
+              <p>{game.genero} - {game.plataforma}</p>
+              <span className="store-card-rating">⭐ {game.rating}/10</span>
+              <span className="recommendations-card-price">Precio: ${game.precio}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Controles de paginación */}
+      {/* Controles de paginación fuera del scroll */}
       {totalPages > 1 && (
         <div className="store-pagination">
           <button 
@@ -110,6 +113,8 @@ export default function Store() {
           </button>
         </div>
       )}
-    </div>
+      </div>
+    </>
+    
   );
 }

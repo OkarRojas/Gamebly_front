@@ -21,7 +21,7 @@ function Naw () {
                 <ul>
                     <li><Link to="/Gamebly_front">Home</Link></li>
                     <li><Link to="/about">your library</Link></li>
-                    <li><Link to="/new-games">New Games</Link></li> {/* ← CAMBIO */}
+                    <li><Link to="/store">Store</Link></li> {/* ← CAMBIO */}
                     <li><Link to="/recommendations">Recomendaciones</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>

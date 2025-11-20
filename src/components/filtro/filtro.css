@@ -11,7 +11,7 @@
   color: white;
   border: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s;
   font-size: 14px;
@@ -74,7 +74,7 @@
 .dropdown-header h3 {
   margin: 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   color: #333;
 }
 
@@ -115,7 +115,7 @@
   text-align: left;
   transition: all 0.2s;
   color: #333;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .genre-btn:hover {
@@ -133,7 +133,7 @@
   border: 2px solid #d8bfd8;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  min-width: 500px;
+  min-width: 400px;
   max-height: 500px;
   overflow-y: auto;
   padding: 0;
@@ -164,7 +164,7 @@
   color: #d8bfd8;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 12px;
   transition: all 0.2s;
 }
@@ -217,7 +217,7 @@
 .result-card-info h5 {
   margin: 0 0 4px 0;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   color: #333;
   white-space: nowrap;
   overflow: hidden;
@@ -233,7 +233,7 @@
 .result-rating {
   font-size: 11px;
   color: #ffa500;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 /* Empty state */

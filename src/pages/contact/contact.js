@@ -71,94 +71,80 @@ export default function Contact() {
         <p className="contact-subtitle">¿Tienes una pregunta o sugerencia? ¡Nos encantaría escucharte!</p>
 
         <form onSubmit={handleSubmit} className="contact-form">
-          {/* Nombre */}
-          <div className="form-group">
-            <label htmlFor="nombre">Nombre *</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              value={formData.nombre}
-              onChange={handleChange}
-              placeholder="Tu nombre completo"
-              className="form-input"
-            />
+          {/* Columna izquierda: Nombre, Email, Asunto */}
+          <div className="form-left">
+            <div className="form-group">
+              <label htmlFor="nombre">Nombre *</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+                placeholder="Tu nombre completo"
+                className="form-input"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Correo Electrónico *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="tu@email.com"
+                className="form-input"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="asunto">Asunto *</label>
+              <input
+                type="text"
+                id="asunto"
+                name="asunto"
+                value={formData.asunto}
+                onChange={handleChange}
+                placeholder="¿De qué se trata?"
+                className="form-input"
+              />
+            </div>
           </div>
 
-          {/* Email */}
-          <div className="form-group">
-            <label htmlFor="email">Correo Electrónico *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="tu@email.com"
-              className="form-input"
-            />
+          {/* Columna derecha: Mensaje y Botón */}
+          <div className="form-right">
+            <div className="form-group">
+              <label htmlFor="mensaje">Mensaje *</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                value={formData.mensaje}
+                onChange={handleChange}
+                placeholder="Escribe tu mensaje aquí..."
+                rows="6"
+                className="form-textarea"
+              ></textarea>
+            </div>
+
+            {/* Mensajes de error/éxito */}
+            {error && <div className="form-error">{error}</div>}
+            {success && <div className="form-success">✅ ¡Mensaje enviado exitosamente!</div>}
+
+            {/* Botón enviar */}
+            <button 
+              type="submit" 
+              className="form-button"
+              disabled={loading}
+            >
+              {loading ? 'Enviando...' : 'Enviar Mensaje'}
+            </button>
           </div>
-
-          {/* Asunto */}
-          <div className="form-group">
-            <label htmlFor="asunto">Asunto *</label>
-            <input
-              type="text"
-              id="asunto"
-              name="asunto"
-              value={formData.asunto}
-              onChange={handleChange}
-              placeholder="¿De qué se trata?"
-              className="form-input"
-            />
-          </div>
-
-          {/* Mensaje */}
-          <div className="form-group">
-            <label htmlFor="mensaje">Mensaje *</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              value={formData.mensaje}
-              onChange={handleChange}
-              placeholder="Escribe tu mensaje aquí..."
-              rows="6"
-              className="form-textarea"
-            ></textarea>
-          </div>
-
-          {/* Mensajes de error/éxito */}
-          {error && <div className="form-error">{error}</div>}
-          {success && <div className="form-success">✅ ¡Mensaje enviado exitosamente!</div>}
-
-          {/* Botón enviar */}
-          <button 
-            type="submit" 
-            className="form-button"
-            disabled={loading}
-          >
-            {loading ? 'Enviando...' : 'Enviar Mensaje'}
-          </button>
         </form>
 
         {/* Información de contacto adicional */}
-        <div className="contact-info">
-          <h3>Otras formas de contactarnos</h3>
-          <div className="contact-info-items">
-            <div className="contact-info-item">
-              <span className="contact-icon">📱</span>
-              <p>Teléfono: +57 123 456 7890</p>
-            </div>
-            <div className="contact-info-item">
-              <span className="contact-icon">📧</span>
-              <p>Email: support@gamebly.com</p>
-            </div>
-            <div className="contact-info-item">
-              <span className="contact-icon">📍</span>
-              <p>Medellín, Colombia</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

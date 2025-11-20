@@ -1,7 +1,9 @@
 .store-container {
-  padding: 40px 20px;
+  
   max-width: 1200px;
   margin: 0 auto;
+  height: 450px;
+  overflow-y: auto;
 }
 
 .store-title {
@@ -9,14 +11,40 @@
   font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
+  flex-shrink: 0; /* No se encoge */
 }
 
-/* Grid de 3 columnas = 6 tarjetas por página */
+/* Grid de juegos */
 .store-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-bottom: 40px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  flex: 1;
+  margin-bottom: 20px;
+  margin-left: 20%;
+  
+}
+
+/* Scrollbar personalizado para el contenedor */
+.store-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.store-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.store-container::-webkit-scrollbar-thumb {
+  background: #d8bfd8;
+  border-radius: 10px;
+}
+
+.store-container::-webkit-scrollbar-thumb:hover {
+  background: #c9a9c9;
 }
 
 .store-card {
@@ -58,13 +86,16 @@
   display: block;
 }
 
-/* Paginación */
+/* Paginación fija fuera del scroll */
 .store-pagination {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: 10%;
 }
 
 .pagination-btn {
@@ -114,18 +145,29 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .store-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .store-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 480px) {
+  .store-container {
+    height: auto;
+  }
+
   .store-grid {
     grid-template-columns: 1fr;
+    height: 500px; /* Altura fija en mobile */
   }
+}
+
+.nose{
+  margin-top:7% ;
+  margin-left: 8%;
+  display: inline;
 }

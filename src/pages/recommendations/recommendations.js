@@ -29,7 +29,7 @@ export default function Recommendations() {
         
         setGames(lista);
         // ✅ OBTÉN JUEGOS ALEATORIOS
-        const random = getRandomGames(lista, 6); // 6 juegos random
+        const random = getRandomGames(lista, 8); // 8 juegos random
         setRecommendedGames(random);
         setLoading(false);
       })
@@ -59,15 +59,7 @@ export default function Recommendations() {
 
   return (
     <div className="recommendations-container">
-      <div className="recommendations-header">
-        <h2 className="recommendations-title">✨ Recomendaciones para ti</h2>
-        <button 
-          className="refresh-btn"
-          onClick={handleRefreshRecommendations}
-        >
-          🔄 Nuevas Recomendaciones
-        </button>
-      </div>
+      
 
       <div className="recommendations-grid">
         {recommendedGames.map((game) => (

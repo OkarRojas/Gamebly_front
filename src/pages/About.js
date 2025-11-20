@@ -43,10 +43,7 @@ export const BibliotecaGris = () => {
   if (juegos.length === 0) return <div style={{padding: '2rem'}}>No tienes juegos en tu biblioteca</div>;
 
   return (
-    <section className="biblioteca-gris">
-      <h2 className="biblioteca-gris__titulo">📚 Mi Biblioteca</h2>
-      
-      
+    <section className="biblioteca-gris">         
       
       <div className="biblioteca-gris__scroll">
         {juegosFiltrados.length === 0 && !loading && !error && (

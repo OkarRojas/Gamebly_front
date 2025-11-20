@@ -78,11 +78,16 @@ export default function NewGames() {
             onClick={() => navigate(`/juego/${game._id}`)}
             style={{ cursor: 'pointer' }}
           >
-            <img 
-              src={game.imagen || 'https://via.placeholder.com/240x140?text=Game'} 
+           <img 
+              src={game.imagen || 'https://via.placeholder.com/240x140?text=Sin-Imagen'} 
               alt={game.nombre} 
               className="new-games-card-image"
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/240x140?text=Sin-Imagen';
+              }}
             />
+
+
             <h3>{game.nombre}</h3>
             <p>{game.genero} - {game.plataforma}</p>
             <span className="new-games-card-rating">⭐ {game.rating}/10</span>

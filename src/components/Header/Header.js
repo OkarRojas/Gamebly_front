@@ -1,30 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import { buscarJuegos } from '../../services/apiClient';
 import filtroo from '../filtro/filtro.js';
+
+// Mapa estático de títulos por ruta.
+const ROUTE_TITLES = {
+  '/': 'Home',
+  '/Gamebly_front': 'Home',
+  '/about': 'My library',
+  '/new-games': 'New Games',
+  '/recommendations': 'Recommendations',
+  '/genre-filter': 'Genre Search',
+  '/store': 'Store',
+  '/contact': 'Contact',
+  '/juego': 'Game Details'
+};
+
+// Resuelve el título según la ruta actual (soporta rutas que comienzan con la clave como /juego/:id).
+function resolveTitle(pathname) {
+  if (ROUTE_TITLES[pathname]) return ROUTE_TITLES[pathname];
+  for (const [base, title] of Object.entries(ROUTE_TITLES)) {
+    if (pathname.startsWith(base)) return title;
+  }
+  return 'Gamebly';
+}
 
 function Header() {
   const [busqueda, setBusqueda] = useState('');
   const [resultados, setResultados] = useState([]);
   const [mostrarResultados, setMostrarResultados] = useState(false);
   const [cargando, setCargando] = useState(false);
+  const [pageTitle, setPageTitle] = useState('Gamebly');
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // ✅ Buscar en tiempo real mientras escribes
+  // Actualizar título según la ruta.
   useEffect(() => {
-    const buscar = async () => {
-      if (busqueda.trim() === '') {
+    setPageTitle(resolveTitle(location.pathname));
+  }, [location.pathname]);
+
+  // Búsqueda en tiempo real (debounce 300ms).
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      const query = busqueda.trim();
+      if (!query) {
         setResultados([]);
         setMostrarResultados(false);
         return;
       }
-
       try {
         setCargando(true);
-        // Llamar a la API para buscar
-        const datos = await buscarJuegos(busqueda);
+        const datos = await buscarJuegos(query);
         setResultados(datos);
         setMostrarResultados(true);
       } catch (error) {
@@ -33,36 +61,37 @@ function Header() {
       } finally {
         setCargando(false);
       }
-    };
-
-    // ✅ Esperar 300ms después de que el usuario deja de escribir (debounce)
-    const timer = setTimeout(buscar, 300);
+    }, 300);
     return () => clearTimeout(timer);
   }, [busqueda]);
 
-  // Manejar click en un resultado
   const handleSelectJuego = (juego) => {
-    // Puedes navegar a una página de detalle del juego si lo deseas
     console.log('Juego seleccionado:', juego);
     setBusqueda('');
     setMostrarResultados(false);
-    // navigate(`/juego/${juego._id}`); // Si tienes esta ruta
+    navigate(`/juego/${juego._id}`);
   };
 
   return (
     <header className="header">
-      <ul className='menu-home'>
-        <li className="header-filter-container">
+      <div className="header-content">
+        {/* Logo y título */}
+        <div className="header-left">          
+          <span className="page-title">{pageTitle}</span>
+        </div>
+        <div className='filtro'>
           {filtroo && React.createElement(filtroo)}
-        </li>
-        <li className="header-search-container">
+        </div>
+
+        {/* Título dinámico según ruta */}
+        <div className="header-center">
           <SearchBar 
             placeholder="Buscar juegos..." 
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
             className="header-search"
           />
-          
+        {/* Barra de búsqueda */}
           {/* ✅ Mostrar dropdown con resultados */}
           {mostrarResultados && (
             <div className="search-resultados">
@@ -71,7 +100,7 @@ function Header() {
               {!cargando && resultados.length === 0 && busqueda.trim() && (
                 <p className="search-empty">No se encontraron juegos</p>
               )}
-              
+          {/* Dropdown de resultados */}
               {!cargando && resultados.length > 0 && (
                 <ul className="search-lista">
                   {resultados.slice(0, 8).map(juego => ( // Máximo 8 resultados
@@ -82,8 +111,12 @@ function Header() {
                     >
                       
                       <div className="search-item__info">
-                        <p className="search-item__nombre">{juego.nombre}</p>
-                        <p className="search-item__genero">{juego.genero}</p>
+                        <img src={juego.imagen} alt={juego.nombre} className="search-item__imagen" />
+                        <div className='letters-info'>
+                          <p className="search-item__nombre">{juego.nombre}</p>
+                          <p className="search-item__genero">{juego.genero}</p>
+                        </div>                        
+                        
                       </div>
                     </li>
                   ))}
@@ -91,9 +124,14 @@ function Header() {
               )}
             </div>
           )}
-        </li>
-        
-      </ul>
+        </div>
+        <div className="header-right">
+          {/* Aquí va lo que tenías antes */}
+        </div>
+      </div>
+
+      {/* Contenedor duplicado de resultados (se mantiene por compatibilidad visual) */}
+      
     </header>
   );
 }

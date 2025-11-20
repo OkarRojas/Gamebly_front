@@ -75,6 +75,7 @@ export default function LibraryGrid({ limit = 4 }) {
             <h3>{game.nombre}</h3>
             <p>{game.genero} - {game.plataforma}</p>
             <span className="library-card-rating">⭐ {game.rating}/10</span>
+            <span className="library-card-price">Precio: ${game.precio}</span>
           </div>
         ))}
       </div>
