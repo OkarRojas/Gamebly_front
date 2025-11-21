@@ -76,7 +76,7 @@ export default function RecentlyPlayed() {
             e.preventDefault();
             navigate("/about"); // O a donde quieras ir
           }}>
-            see more
+            See more
           </a>
         </div>
 
@@ -128,8 +128,6 @@ export default function RecentlyPlayed() {
             );
           })}
 
-          <div className="tarjeta-libro">Libro 6</div>
-          <div className="tarjeta-libro">Libro 7</div>
         </div>
       </section>
     </div>

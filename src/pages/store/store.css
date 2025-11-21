@@ -22,6 +22,7 @@
   padding: 20px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
+  border-color:#000724;
   flex: 1;
   margin-bottom: 20px;
   margin-left: 20%;
@@ -34,7 +35,7 @@
 }
 
 .store-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background:#000724;
   border-radius: 10px;
 }
 
@@ -48,12 +49,13 @@
 }
 
 .store-card {
-  background: white;
+  background:  rgb(6, 10, 71);
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 12px;
+  color: #fff;
 }
 
 .store-card:hover {
@@ -112,7 +114,7 @@
 
 .pagination-btn:hover:not(:disabled) {
   background: #d8bfd8;
-  color: white;
+  color:  rgb(6, 10, 71);
   transform: translateY(-2px);
 }
 

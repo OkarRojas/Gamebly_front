@@ -20,9 +20,9 @@ function Naw () {
                 </div>
                 <ul>
                     <li><Link to="/Gamebly_front">Home</Link></li>
-                    <li><Link to="/about">your library</Link></li>
+                    <li><Link to="/about">Your library</Link></li>
                     <li><Link to="/store">Store</Link></li> {/* ← CAMBIO */}
-                    <li><Link to="/recommendations">Recomendaciones</Link></li>
+                    <li><Link to="/recommendations">Recommendations</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </nav>

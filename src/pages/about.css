@@ -45,7 +45,7 @@
   margin: 0;
 }
 .biblioteca-gris__card {
-  background: #3d3d3d;
+  background: rgb(6, 10, 71);
   color: #fff;
   border-radius: 8px;
   overflow: hidden;

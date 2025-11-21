@@ -7,7 +7,7 @@
 /* Botón principal */
 .search-bar-btn {
   padding: 10px 16px;
-  background: linear-gradient(135deg, #d8bfd8, #c9a9c9);
+  background: linear-gradient(135deg, rgb(43, 130, 165), rgb(23, 15, 56));
   color: white;
   border: none;
   border-radius: 8px;
@@ -94,7 +94,7 @@
 }
 
 .close-btn:hover {
-  color: #d8bfd8;
+  color: rgb(43, 130, 165);
 }
 
 /* Lista de géneros */
@@ -119,9 +119,9 @@
 }
 
 .genre-btn:hover {
-  background: #f0e6f0;
-  border-color: #d8bfd8;
-  color: #d8bfd8;
+  background: rgb(43, 130, 165);
+  border-color: rgb(43, 130, 165);
+  color:rgb(255, 255, 255);
 }
 
 /* Resultados */

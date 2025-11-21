@@ -56,7 +56,7 @@ export default function LibraryGrid({ limit = 4 }) {
       <div className="library-grid-header" >
         <h2>Store</h2>
         {limit && games.length > limit && (
-          <button className="see-more-btn" onClick={handleSeeMore}>Ver más</button>
+          <button className="see-more-btn" onClick={handleSeeMore}>See more</button>
         )}
       </div>
       <div className="library-grid">
@@ -74,7 +74,7 @@ export default function LibraryGrid({ limit = 4 }) {
             />
             <h3>{game.nombre}</h3>
             <p>{game.genero} - {game.plataforma}</p>
-            <span className="library-card-rating">⭐ {game.rating}/10</span>
+            
             <span className="library-card-price">Precio: ${game.precio}</span>
           </div>
         ))}

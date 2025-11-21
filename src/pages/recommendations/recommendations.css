@@ -15,7 +15,7 @@
 }
 
 .recommendations-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #000724;
   border-radius: 10px;
 }
 
@@ -74,13 +74,14 @@
 }
 
 .recommendations-card {
-  background: white;
+  background:  #00183d;
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 
 .recommendations-card:hover {
@@ -93,7 +94,7 @@
   width: 100%;
   height: 180px;
   overflow: hidden;
-  background: #f0f0f0;
+  background:  #00183d;
 }
 
 .recommendations-card-image {
@@ -119,7 +120,7 @@
   margin: 0 0 8px 0;
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
